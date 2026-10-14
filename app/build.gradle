@@ -1,0 +1,24 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.localdownload.mobile'
+    compileSdk 35
+    compileSdkExtension 15
+    defaultConfig {
+        applicationId 'com.localdownload.mobile'
+        minSdk 29
+        targetSdk 35
+        versionCode 1
+        versionName '1.0'
+        ndk { abiFilters.addAll((project.findProperty('appAbis') ?: 'arm64-v8a,armeabi-v7a').split(',')) }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    packaging { jniLibs { useLegacyPackaging true } }
+    signingConfigs { debug { storeFile rootProject.file('.tools/localsaver.keystore'); storePassword 'android'; keyAlias 'localsaver'; keyPassword 'android' } }
+    buildTypes { release { signingConfig signingConfigs.debug; minifyEnabled false; debuggable false } }
+    testOptions { unitTests.returnDefaultValues = true }
+}
+dependencies {
+    implementation 'io.github.junkfood02.youtubedl-android:library:0.18.1'
+    implementation 'io.github.junkfood02.youtubedl-android:ffmpeg:0.18.1'
+    testImplementation 'junit:junit:4.13.2'
+}

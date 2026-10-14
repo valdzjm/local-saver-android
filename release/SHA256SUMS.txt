@@ -1,0 +1,2 @@
+2ba62b0504538a3a6ea6ecf41b9ac38d1156af156d8730634f9b468dddb35eab  LocalSaver-Android.apk
+f968a8ca1c23aa3508d4ca54f86ae92e321d03cc25900db11a82d75204b20b20  LocalSaver-Source.zip

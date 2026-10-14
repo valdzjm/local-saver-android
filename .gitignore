@@ -1,0 +1,15 @@
+.tools/
+.gradle/
+local.properties
+app/build/
+build/
+tests/output/
+test-results/
+release/*.apk
+release/*.zip
+__pycache__/
+*.py[cod]
+*.keystore
+*.jks
+*.pem
+node_modules/
